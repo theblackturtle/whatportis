@@ -22,7 +22,7 @@ setup(
         "tinydb==4.4.0",
         "requests==2.25.1",
         "prettytable==2.1.0",
-        "click==8.0.1"
+        "click==7.1.2"
     ],
     extras_require={
         "dev": [
