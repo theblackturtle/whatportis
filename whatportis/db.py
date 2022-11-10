@@ -30,9 +30,7 @@ def merge_protocols(ports=[]):
     """
     keys = {}
     for port in ports:
-        key = "{}-{}-{}".format(
-            port.get("description"), port.get("name"), port.get("port")
-        )
+        key = "{}-{}-{}".format(port.get("description"), port.get("name"), port.get("port"))
         if key not in keys:
             keys[key] = port
         else:
@@ -60,3 +58,18 @@ def get_ports(port, like=False):
 
     ports = merge_protocols(ports)
     return [Port(**port) for port in ports]  # flake8: noqa (F812)
+
+
+def get_description(protocol_name):
+    """
+    This function returns the description of the given protocol.
+
+    :param protocol: the protocol
+    :return: the description of the protocol
+    :rtype: str
+    """
+    db = get_database()
+    port = db.search(where("protocol") == protocol_name.lower())
+    if port:
+        return port[0].get("description")
+    return ""
