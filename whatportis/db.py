@@ -60,7 +60,7 @@ def get_ports(port, like=False):
     return [Port(**port) for port in ports]  # flake8: noqa (F812)
 
 
-def get_description(protocol_name):
+def get_description(service_name):
     """
     This function returns the description of the given protocol.
 
@@ -69,7 +69,7 @@ def get_description(protocol_name):
     :rtype: str
     """
     db = get_database()
-    port = db.search(where("protocol") == protocol_name.lower())
+    port = db.search(where("name") == service_name.lower())
     if port:
         return port[0].get("description")
     return ""
