@@ -9,7 +9,7 @@ readme = open("README.rst").read()
 
 setup(
     name="whatportis",
-    version="0.8.5",
+    version="0.8.6",
     url="http://github.com/theblackturtle/whatportis",
     author="Nicolas Crocfer",
     author_email="ncrocfer@gmail.com",
