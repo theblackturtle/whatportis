@@ -17,8 +17,8 @@ setup(
     long_description=readme,
     packages=["whatportis"],
     include_package_data=True,
-    install_requires=["simplejson>=3.17.2", "tinydb>=4.4.0", "requests>>=2.1.0", "prettytable>=2.1.0", "click>=7.1.2"],
-    extras_require={"dev": ["pytest", "tox", "black"], "server": ["flask==1.1.2"]},
+    install_requires=["simplejson>=3.17.2", "tinydb>=4.4.0", "requests>=2.1.0", "prettytable>=2.1.0", "click>=7.1.2"],
+    extras_require={"dev": ["pytest", "tox", "black"], "server": ["flask>=1.1.2"]},
     entry_points=entry_points,
     classifiers=(
         "Development Status :: 5 - Production/Stable",
